@@ -1,0 +1,824 @@
+<div class="lan-card-area ng-scope" style=""> 
+    <!--**********************top Search head************************-->
+    <form action="" area="" method="" class="ng-pristine ng-valid">
+        <div class="top-search-margin landing-searcharea">
+            <div class="top-search-area">
+                <div class="search-main input-colum">
+                    <input type="text" autocomplete="off" name="search-terms-home" id="search-terms-home" placeholder="Find your stock mojo" ng-model="searchTermsLanding" data-search-url="/Stocks?StockId=-1&amp;Exchange=-2" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Find your stock mojo'" data-ll="javascript:this.id" ng-change="searchCompany(searchTermsLanding,'searchTermsLanding')" class="ng-pristine ng-untouched ng-valid ng-empty">
+                    <ul class="auto-search auto-search-home landingHome" id="searchTermsLanding" style="display:none;z-index:10!important">
+                        <!-- ngRepeat: entry in company_list.data -->
+                        <li ng-show="company_list.data.length<=0" class="ng-hide">
+                            <a class="specialeffects" href="javascript:void(0)">
+                                <span class="suggest-name">No stocks results found</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <button type="submit">Search Stocks</button>
+                </div>
+            </div>
+        </div>
+    </form>   
+    
+    <!--**********************top news head************************-->
+    <!-- ngIf: landingData.top_news.length > 0 --><div class="top-news-row ng-scope" id="news_Landing" ="landingData.top_news.length > 0">
+        <ul ticker="" class="newstickerstk-new ng-scope active" style="height: 62px; overflow: hidden;">
+            <!-- ngRepeat: news in landingData.top_news track by $index --><!-- end ngRepeat: news in landingData.top_news track by $index --><!-- end ngRepeat: news in landingData.top_news track by $index --><!-- end ngRepeat: news in landingData.top_news track by $index --><!-- end ngRepeat: news in landingData.top_news track by $index --><!-- end ngRepeat: news in landingData.top_news track by $index -->
+        <li ng-repeat="news in landingData.top_news track by $index" class="ng-binding ng-scope">
+                <span class="grey">Top News</span>
+                F-16 Production Can Make India Fighter Jet Export Hub: Lockheed Martin
+            </li><li ng-repeat="news in landingData.top_news track by $index" class="ng-binding ng-scope">
+                <span class="grey">Top News</span>
+                Bigger say for home buyers in Modi government's bankruptcy code tweak
+            </li><li ng-repeat="news in landingData.top_news track by $index" class="ng-binding ng-scope">
+                <span class="grey">Top News</span>
+                Government should review taxes on petrol, diesel: HPCL chairman
+            </li><li ng-repeat="news in landingData.top_news track by $index" class="ng-binding ng-scope">
+                <span class="grey">Top News</span>
+                Tata Motors Q4 profit halves YoY to Rs 2176 crore, misses Street estimates
+            </li><li ng-repeat="news in landingData.top_news track by $index" class="ng-binding ng-scope">
+                <span class="grey">Top News</span>
+                India to take a 'long-term" view on fuel pricing: Law Minister
+            </li></ul>
+    </div><!-- end ngIf: landingData.top_news.length > 0 -->
+    
+    <!--**********************top head************************-->
+    <div class="header-top clearfix">
+        <div style="cursor:pointer;width: 100%;margin: auto;position: relative;top: 2px;">
+            <div class="market-view-container02">
+               <h3><span><a data-href="/portfolio-plus/stock-investments" href="javascript:void(0);" onclick="onclick_loader(this.getAttribute(&quot;data-href&quot;))">PORTFOLIO</a> <a data-href="/landing" onclick="onclick_loader(this.getAttribute(&quot;data-href&quot;))" href="javascript:void(0)" id="colourButton" class="ref-text-new"> <i class="fa fa-refresh"></i> Refresh</a></span></h3>
+            </div>
+            <!-- ngIf: landingData.islogin == 'yes'&& portfolioData.pf_networth.length != 0 -->
+            <div class="top-section">
+                <div class="toparea-band">
+                        <!-- ngIf: callPortfolioData || landingData.islogin == 'no' -->
+                </div>
+                    <!-- ngIf: callPortfolioData -->
+            </div>
+        </div>      
+    </div>
+   
+    <!-- ngIf: !callPortfolioData && landingData.islogin == 'yes'  --><div class="landingbuttonarea smallbutton_new1 ng-scope">
+                    <a href="javascript:void(0);" id="show_portfolio" ng-click="getPortfolioData()">Show My Portfolio</a>
+                </div><!-- end ngIf: !callPortfolioData && landingData.islogin == 'yes'  -->
+        <!--**********************PORTFOLIO STOCKS************************-->  
+
+        <!-- ngIf: portfolioData.islogin != 'no' && (portfolioData.pf_stocks.show_div_gainers == true || portfolioData.pf_stocks.show_div_losers == true ) -->
+   
+    <!--**********************INDIAN INDICES************************-->
+    
+    <div class="market-wrapper">
+        <div class="market-view-container">
+            <h3>
+                <span><a data-href="/markets#navPrice" href="javascript:void(0);" onclick="onclick_loader(this.getAttribute(&quot;data-href&quot;))"> INDIAN INDICES</a></span>
+            </h3>
+            <div class="table">
+                <!-- ngRepeat: indices in landingData.indian_ind --><div ng-repeat="indices in landingData.indian_ind" class="table-row red">
+                    <div class="table-cell-1 text-color sensextext ng-binding">Sensex</div>
+                    <div class="table-cell-2 text-color ng-binding">34,344.91</div>
+                    <div class="table-cell-3">
+                        <span class="arrow"></span>
+                    </div>
+                    <div class="table-cell-4 ng-binding">-306.33</div>
+                    <div class="table-cell-5">
+                        <span class="ng-binding">-0.88%</span>
+                    </div>
+                </div><!-- end ngRepeat: indices in landingData.indian_ind --><div ng-repeat="indices in landingData.indian_ind" class="table-row red">
+                    <div class="table-cell-1 text-color sensextext ng-binding">Nifty</div>
+                    <div class="table-cell-2 text-color ng-binding">10,430.35</div>
+                    <div class="table-cell-3">
+                        <span class="arrow"></span>
+                    </div>
+                    <div class="table-cell-4 ng-binding">-106.35</div>
+                    <div class="table-cell-5">
+                        <span class="ng-binding">-1.01%</span>
+                    </div>
+                </div><!-- end ngRepeat: indices in landingData.indian_ind --><div ng-repeat="indices in landingData.indian_ind" class="table-row red">
+                    <div class="table-cell-1 text-color sensextext ng-binding">BSE Mid Cap</div>
+                    <div class="table-cell-2 text-color ng-binding">15,699.75</div>
+                    <div class="table-cell-3">
+                        <span class="arrow"></span>
+                    </div>
+                    <div class="table-cell-4 ng-binding">-38.36</div>
+                    <div class="table-cell-5">
+                        <span class="ng-binding">-0.24%</span>
+                    </div>
+                </div><!-- end ngRepeat: indices in landingData.indian_ind --><div ng-repeat="indices in landingData.indian_ind" class="table-row red">
+                    <div class="table-cell-1 text-color sensextext ng-binding">BSE Small Cap</div>
+                    <div class="table-cell-2 text-color ng-binding">16,976.88</div>
+                    <div class="table-cell-3">
+                        <span class="arrow"></span>
+                    </div>
+                    <div class="table-cell-4 ng-binding">-80.01</div>
+                    <div class="table-cell-5">
+                        <span class="ng-binding">-0.47%</span>
+                    </div>
+                </div><!-- end ngRepeat: indices in landingData.indian_ind -->            
+            </div>
+        </div>
+        
+        <!--**********************MARKET ACTION TODAY************************-->
+        
+        <!-- ngIf: landingData.ismarketstart == true --><div class="market-view-container ng-scope" >
+            <h3>
+                <span><a data-href="/markets" href="javascript:void(0);" onclick="onclick_loader(this.getAttribute(&quot;data-href&quot;))"> MARKET ACTION TODAY</a></span>
+            </h3>
+            <div class="market-news">
+                <ul>
+                   <!-- ngRepeat: action in landingData.mk_action --><li ng-repeat="action in landingData.mk_action" class="ng-scope">
+                      <span class="red_color">Market Movement:</span>
+                      <span dynamic="action.text">Nifty closed down by -106.35 points and Sensex closed down by -306.33 points</span>
+                   </li><!-- end ngRepeat: action in landingData.mk_action --><li ng-repeat="action in landingData.mk_action" class="ng-scope">
+                      <span class="red_color">Large Cap dragging:</span>
+                      <span dynamic="action.text">While all Market Cap categories have fallen, Large Caps has dragged the market with Nifty change of -1.01%</span>
+                   </li><!-- end ngRepeat: action in landingData.mk_action --><li ng-repeat="action in landingData.mk_action" class="ng-scope">
+                      <span class="red_color">Intraday Low - Nifty:</span>
+                      <span dynamic="action.text">Nifty touched an intraday low 10417.80 (-1.13%)</span>
+                   </li><!-- end ngRepeat: action in landingData.mk_action --><li ng-repeat="action in landingData.mk_action" class="ng-scope">
+                      <span class="grey_color">Moving Averages - Nifty:</span>
+                      <span dynamic="action.text">Nifty traded higher than 200 day but lower than 5 day, 20 day, 50 day, 100 day moving averages</span>
+                   </li><!-- end ngRepeat: action in landingData.mk_action -->
+                </ul>               
+            </div>
+            <!-- ngIf: landingData.ismarketstart == false -->
+        </div><!-- end ngIf: landingData.ismarketstart == true -->
+        
+        <!--**********************GLOBAL INDICES************************-->
+        
+       <!-- <div class="market-view-container">
+            <h3>
+                <span><a data-href="/markets#navInternationalBusinessNews"  href="javascript:void(0);" onclick='onclick_loader(this.getAttribute("data-href"))' >GLOBAL INDICES</a></span>
+            </h3>
+            <div class="table">
+                <div ng-repeat="gindices in landingData.glob_indices" class="table-row {{gindices.dir==1?'green':gindices.dir==-1?'red':''}}">
+                    <div class="table-cell-1 text-color">
+                        {{gindices.iname}} <h5 class="grey">{{gindices.country}}</h5>
+                    </div>
+                    <div class="table-cell-2 text-color">{{gindices.price | INR}}</div>
+                    <div class="table-cell-3">
+                        <span class="arrow"></span>
+                    </div>
+                    <div class="table-cell-4">{{gindices.chg | INR }} </div>
+                    <div class="table-cell-5">
+                        <span>{{gindices.chgp | INR}}%</span>
+                    </div>
+                </div>            
+            </div>
+        </div> -->  
+
+        <!--**********************LAST VISITED STOCKS************************-->        
+        
+        <!-- ngIf: landingData.recly_stocks.show_div_gainers == true || landingData.recly_stocks.show_div_losers == true || landingData.recly_stocks.show_div_recly == true --><div class="market-view-container ng-scope" >
+            <h3>
+                <span>LAST VISITED STOCKS</span>
+            </h3>
+            <!-- ngIf: landingData.recly_stocks.show_div_gainers == true --><h4 class="green-head ng-scope" >TOP GAINERS</h4><!-- end ngIf: landingData.recly_stocks.show_div_gainers == true -->         
+            <div class="table">
+                <!-- ngRepeat: glastvisit in landingData.recly_stocks.gainers --><div ng-repeat="glastvisit in landingData.recly_stocks.gainers" class="table-row green">
+                    <div class="table-cell-1">
+                        <a data-href="/Stocks?StockId=522321&amp;Exchange=0" onclick="onclick_loader(this.getAttribute(&quot;data-href&quot;))" class="text-color ng-binding">Just Dial</a>             
+                        <ul>
+                            <li class="green-mojo"></li>
+                            <li class="green-mojo"></li>
+                            <li class="green-mojo"></li>
+                        </ul>
+                    </div>
+                    <div class="table-cell-2 text-color ng-binding">436.05</div>
+                    <div class="table-cell-3">
+                        <span class="arrow"></span>
+                    </div>
+                    <div class="table-cell-4 ng-binding">5.70</div>
+                    <div class="table-cell-5"><span class="ng-binding">1.32%</span></div>
+                </div><!-- end ngRepeat: glastvisit in landingData.recly_stocks.gainers -->
+            </div>
+            <!-- ngIf: landingData.recly_stocks.show_div_gainers == true && landingData.recly_stocks.gainers_text.length > 0 -->        
+            <!-- ngIf: landingData.recly_stocks.show_div_losers == true --><h4 class="red-head ng-scope">TOP LOSERS</h4><!-- end ngIf: landingData.recly_stocks.show_div_losers == true -->
+                  
+            <div class="table">
+                <!-- ngRepeat: lastvisit in landingData.recly_stocks.losers --><div ng-repeat="lastvisit in landingData.recly_stocks.losers" class="table-row red">
+                    <div class="table-cell-1">
+                        <a data-href="/Stocks?StockId=411425&amp;Exchange=0" onclick="onclick_loader(this.getAttribute(&quot;data-href&quot;))" class="text-color ng-binding">Inventure Growth</a>             
+                        <ul>
+                            <li class="grey-mojo"></li>
+                            <li class="red-mojo"></li>
+                            <li class="green-mojo"></li>
+                        </ul>
+                    </div>
+                    <div class="table-cell-2 text-color ng-binding">17.10</div>
+                    <div class="table-cell-3"><span class="arrow"></span></div>
+                    <div class="table-cell-4 ng-binding">-0.20</div>
+                    <div class="table-cell-5"> <span class="ng-binding">-1.16%</span></div>
+                </div><!-- end ngRepeat: lastvisit in landingData.recly_stocks.losers -->            
+            </div>
+            <!-- ngIf: landingData.recly_stocks.show_div_losers == true && landingData.recly_stocks.losers_text.length > 0 -->
+            <!-- ngIf: landingData.recly_stocks.show_div_recly == true && landingData.recly_stocks.recly_text.length > 0 -->        
+        </div><!-- end ngIf: landingData.recly_stocks.show_div_gainers == true || landingData.recly_stocks.show_div_losers == true || landingData.recly_stocks.show_div_recly == true -->
+        
+        <!--**********************STOCKS IN ACTION************************-->       
+        
+        <!-- ngIf: landingData.stock_action.show_div_gainers == true || landingData.stock_action.show_div_losers == true || landingData.stock_action.show_div_wk52_high == true || landingData.stock_action.show_div_wk52_low == true  --><div class="market-view-container ng-scope">
+            <h3>
+                <span><a data-href="/markets#navStocksInAction" href="javascript:void(0);" onclick="onclick_loader(this.getAttribute(&quot;data-href&quot;))">STOCKS IN ACTION</a></span>
+            </h3>
+            <!-- ngIf: landingData.stock_action.show_div_gainers==true --><h4 class="green-head ng-scope">TOP GAINERS - Nifty 500</h4><!-- end ngIf: landingData.stock_action.show_div_gainers==true -->
+            <div class="table">
+                <!-- ngRepeat: sgainers in landingData.stock_action.gainers --><div ng-repeat="sgainers in landingData.stock_action.gainers" class="table-row green">
+                    <div class="table-cell-1">
+                        <a data-href="/Stocks?StockId=824163&amp;Exchange=0" onclick="onclick_loader(this.getAttribute(&quot;data-href&quot;))" class="text-color ng-binding">Minda Industries</a>
+                        <ul>
+                            <li class="green-mojo"></li>
+                            <li class="orange-mojo"></li>
+                            <li class="green-mojo"></li>
+                        </ul>
+                    </div>
+                    <div class="table-cell-2 text-color ng-binding">1,281.80</div>
+                    <div class="table-cell-3">
+                        <span class="arrow"></span>
+                    </div>
+                    <div class="table-cell-4 ng-binding">155.20</div>
+                    <div class="table-cell-5">
+                        <span class="ng-binding">13.78%</span>
+                    </div>
+                </div><!-- end ngRepeat: sgainers in landingData.stock_action.gainers --><div ng-repeat="sgainers in landingData.stock_action.gainers" class="table-row green">
+                    <div class="table-cell-1">
+                        <a data-href="/Stocks?StockId=604869&amp;Exchange=0" onclick="onclick_loader(this.getAttribute(&quot;data-href&quot;))" class="text-color ng-binding">Marksans Pharma</a>
+                        <ul>
+                            <li class="orange-mojo"></li>
+                            <li class="red-mojo"></li>
+                            <li class="green-mojo"></li>
+                        </ul>
+                    </div>
+                    <div class="table-cell-2 text-color ng-binding">28.60</div>
+                    <div class="table-cell-3">
+                        <span class="arrow"></span>
+                    </div>
+                    <div class="table-cell-4 ng-binding">2.70</div>
+                    <div class="table-cell-5">
+                        <span class="ng-binding">10.42%</span>
+                    </div>
+                </div><!-- end ngRepeat: sgainers in landingData.stock_action.gainers --><div ng-repeat="sgainers in landingData.stock_action.gainers" class="table-row green">
+                    <div class="table-cell-1">
+                        <a data-href="/Stocks?StockId=421897&amp;Exchange=0" onclick="onclick_loader(this.getAttribute(&quot;data-href&quot;))" class="text-color ng-binding">GVK Power &amp; Infra.</a>
+                        <ul>
+                            <li class="red-mojo"></li>
+                            <li class="red-mojo"></li>
+                            <li class="green-mojo"></li>
+                        </ul>
+                    </div>
+                    <div class="table-cell-2 text-color ng-binding">12.50</div>
+                    <div class="table-cell-3">
+                        <span class="arrow"></span>
+                    </div>
+                    <div class="table-cell-4 ng-binding">1.13</div>
+                    <div class="table-cell-5">
+                        <span class="ng-binding">9.94%</span>
+                    </div>
+                </div><!-- end ngRepeat: sgainers in landingData.stock_action.gainers --><div ng-repeat="sgainers in landingData.stock_action.gainers" class="table-row green">
+                    <div class="table-cell-1">
+                        <a data-href="/Stocks?StockId=377966&amp;Exchange=0" onclick="onclick_loader(this.getAttribute(&quot;data-href&quot;))" class="text-color ng-binding">Shriram City Union</a>
+                        <ul>
+                            <li class="green-mojo"></li>
+                            <li class="orange-mojo"></li>
+                            <li class="green-mojo"></li>
+                        </ul>
+                    </div>
+                    <div class="table-cell-2 text-color ng-binding">2,340.00</div>
+                    <div class="table-cell-3">
+                        <span class="arrow"></span>
+                    </div>
+                    <div class="table-cell-4 ng-binding">174.60</div>
+                    <div class="table-cell-5">
+                        <span class="ng-binding">8.06%</span>
+                    </div>
+                </div><!-- end ngRepeat: sgainers in landingData.stock_action.gainers --><div ng-repeat="sgainers in landingData.stock_action.gainers" class="table-row green">
+                    <div class="table-cell-1">
+                        <a data-href="/Stocks?StockId=1000372&amp;Exchange=0" onclick="onclick_loader(this.getAttribute(&quot;data-href&quot;))" class="text-color ng-binding">L&amp;T Infotech</a>
+                        <ul>
+                            <li class="green-mojo"></li>
+                            <li class="red-mojo"></li>
+                            <li class="orange-mojo"></li>
+                        </ul>
+                    </div>
+                    <div class="table-cell-2 text-color ng-binding">1,609.00</div>
+                    <div class="table-cell-3">
+                        <span class="arrow"></span>
+                    </div>
+                    <div class="table-cell-4 ng-binding">101.05</div>
+                    <div class="table-cell-5">
+                        <span class="ng-binding">6.70%</span>
+                    </div>
+                </div><!-- end ngRepeat: sgainers in landingData.stock_action.gainers -->
+            </div>
+            <!-- ngIf: landingData.stock_action.gainers_text.length > 0 && landingData.stock_action.show_div_gainers==true -->
+            <!-- ngIf: landingData.stock_action.show_div_losers==true --><h4 class="red-head ng-scope">TOP LOSERS - Nifty 500</h4><!-- end ngIf: landingData.stock_action.show_div_losers==true -->
+            
+            <div class="table">
+                <!-- ngRepeat: slosers in landingData.stock_action.losers --><div ng-repeat="slosers in landingData.stock_action.losers" class="table-row red">
+                    <div class="table-cell-1">
+                        <a data-href="/Stocks?StockId=313810&amp;Exchange=0" onclick="onclick_loader(this.getAttribute(&quot;data-href&quot;))" class="text-color ng-binding">Hindustan Petroleum</a>
+                        <ul>
+                            <li class="green-mojo"></li>
+                            <li class="green-mojo"></li>
+                            <li class="orange-mojo"></li>
+                        </ul>
+                    </div>
+                    <div class="table-cell-2 text-color ng-binding">286.95</div>
+                    <div class="table-cell-3">
+                        <span class="arrow"></span>
+                    </div>
+                    <div class="table-cell-4 ng-binding">-25.15</div>
+                    <div class="table-cell-5">
+                        <span class="ng-binding">-8.06%</span>
+                    </div>
+                </div><!-- end ngRepeat: slosers in landingData.stock_action.losers --><div ng-repeat="slosers in landingData.stock_action.losers" class="table-row red">
+                    <div class="table-cell-1">
+                        <a data-href="/Stocks?StockId=887786&amp;Exchange=0" onclick="onclick_loader(this.getAttribute(&quot;data-href&quot;))" class="text-color ng-binding">Balrampur Chini</a>
+                        <ul>
+                            <li class="green-mojo"></li>
+                            <li class="green-mojo"></li>
+                            <li class="red-mojo"></li>
+                        </ul>
+                    </div>
+                    <div class="table-cell-2 text-color ng-binding">68.00</div>
+                    <div class="table-cell-3">
+                        <span class="arrow"></span>
+                    </div>
+                    <div class="table-cell-4 ng-binding">-5.45</div>
+                    <div class="table-cell-5">
+                        <span class="ng-binding">-7.42%</span>
+                    </div>
+                </div><!-- end ngRepeat: slosers in landingData.stock_action.losers --><div ng-repeat="slosers in landingData.stock_action.losers" class="table-row red">
+                    <div class="table-cell-1">
+                        <a data-href="/Stocks?StockId=594470&amp;Exchange=0" onclick="onclick_loader(this.getAttribute(&quot;data-href&quot;))" class="text-color ng-binding">Tata Steel</a>
+                        <ul>
+                            <li class="orange-mojo"></li>
+                            <li class="green-mojo"></li>
+                            <li class="green-mojo"></li>
+                        </ul>
+                    </div>
+                    <div class="table-cell-2 text-color ng-binding">539.25</div>
+                    <div class="table-cell-3">
+                        <span class="arrow"></span>
+                    </div>
+                    <div class="table-cell-4 ng-binding">-37.95</div>
+                    <div class="table-cell-5">
+                        <span class="ng-binding">-6.57%</span>
+                    </div>
+                </div><!-- end ngRepeat: slosers in landingData.stock_action.losers --><div ng-repeat="slosers in landingData.stock_action.losers" class="table-row red">
+                    <div class="table-cell-1">
+                        <a data-href="/Stocks?StockId=950641&amp;Exchange=0" onclick="onclick_loader(this.getAttribute(&quot;data-href&quot;))" class="text-color ng-binding">Century Textiles</a>
+                        <ul>
+                            <li class="green-mojo"></li>
+                            <li class="green-mojo"></li>
+                            <li class="green-mojo"></li>
+                        </ul>
+                    </div>
+                    <div class="table-cell-2 text-color ng-binding">934.35</div>
+                    <div class="table-cell-3">
+                        <span class="arrow"></span>
+                    </div>
+                    <div class="table-cell-4 ng-binding">-63.95</div>
+                    <div class="table-cell-5">
+                        <span class="ng-binding">-6.41%</span>
+                    </div>
+                </div><!-- end ngRepeat: slosers in landingData.stock_action.losers --><div ng-repeat="slosers in landingData.stock_action.losers" class="table-row red">
+                    <div class="table-cell-1">
+                        <a data-href="/Stocks?StockId=801588&amp;Exchange=0" onclick="onclick_loader(this.getAttribute(&quot;data-href&quot;))" class="text-color ng-binding">Vedanta</a>
+                        <ul>
+                            <li class="green-mojo"></li>
+                            <li class="green-mojo"></li>
+                            <li class="green-mojo"></li>
+                        </ul>
+                    </div>
+                    <div class="table-cell-2 text-color ng-binding">252.70</div>
+                    <div class="table-cell-3">
+                        <span class="arrow"></span>
+                    </div>
+                    <div class="table-cell-4 ng-binding">-16.80</div>
+                    <div class="table-cell-5">
+                        <span class="ng-binding">-6.23%</span>
+                    </div>
+                </div><!-- end ngRepeat: slosers in landingData.stock_action.losers -->
+            </div>
+            <!-- ngIf: landingData.stock_action.losers_text.length > 0 && landingData.stock_action.show_div_losers==true -->
+            <!-- ngIf: landingData.stock_action.show_div_wk52_high==true --><h4 class="green-head ng-scope">52 WEEK HIGH - Nifty 500</h4><!-- end ngIf: landingData.stock_action.show_div_wk52_high==true -->
+            <div class="table">
+                <!-- ngRepeat: shigh in landingData.stock_action.wk52_high --><div ng-repeat="shigh in landingData.stock_action.wk52_high" class="table-row green">
+                    <div class="table-cell-1">
+                        <a data-href="/Stocks?StockId=963994&amp;Exchange=0" onclick="onclick_loader(this.getAttribute(&quot;data-href&quot;))" class="text-color ng-binding">Britannia Ind.</a>
+                        <ul>
+                            <li class="green-mojo"></li>
+                            <li class="red-mojo"></li>
+                            <li class="orange-mojo"></li>
+                        </ul>
+                    </div>
+                    <div class="table-cell-2 text-color ng-binding">5,711.50</div>
+                    <div class="table-cell-3">
+                        <span class="arrow"></span>
+                    </div>
+                    <div class="table-cell-4 ng-binding">115.25</div>
+                    <div class="table-cell-5">
+                        <span class="ng-binding">2.06%</span>
+                    </div>
+                </div><!-- end ngRepeat: shigh in landingData.stock_action.wk52_high --><div ng-repeat="shigh in landingData.stock_action.wk52_high" class="table-row red">
+                    <div class="table-cell-1">
+                        <a data-href="/Stocks?StockId=619599&amp;Exchange=0" onclick="onclick_loader(this.getAttribute(&quot;data-href&quot;))" class="text-color ng-binding">Pidilite Industries</a>
+                        <ul>
+                            <li class="green-mojo"></li>
+                            <li class="orange-mojo"></li>
+                            <li class="orange-mojo"></li>
+                        </ul>
+                    </div>
+                    <div class="table-cell-2 text-color ng-binding">1,084.20</div>
+                    <div class="table-cell-3">
+                        <span class="arrow"></span>
+                    </div>
+                    <div class="table-cell-4 ng-binding">-34.10</div>
+                    <div class="table-cell-5">
+                        <span class="ng-binding">-3.05%</span>
+                    </div>
+                </div><!-- end ngRepeat: shigh in landingData.stock_action.wk52_high --><div ng-repeat="shigh in landingData.stock_action.wk52_high" class="table-row red">
+                    <div class="table-cell-1">
+                        <a data-href="/Stocks?StockId=807018&amp;Exchange=0" onclick="onclick_loader(this.getAttribute(&quot;data-href&quot;))" class="text-color ng-binding">Berger Paints India</a>
+                        <ul>
+                            <li class="green-mojo"></li>
+                            <li class="red-mojo"></li>
+                            <li class="orange-mojo"></li>
+                        </ul>
+                    </div>
+                    <div class="table-cell-2 text-color ng-binding">281.60</div>
+                    <div class="table-cell-3">
+                        <span class="arrow"></span>
+                    </div>
+                    <div class="table-cell-4 ng-binding">-10.75</div>
+                    <div class="table-cell-5">
+                        <span class="ng-binding">-3.68%</span>
+                    </div>
+                </div><!-- end ngRepeat: shigh in landingData.stock_action.wk52_high -->
+            </div>
+            <!-- ngIf: landingData.stock_action.wk52_high_text.length > 0 && landingData.stock_action.show_div_wk52_high==true -->
+            <!-- ngIf: landingData.stock_action.show_div_wk52_low==true --><h4 class="red-head ng-scope">52 WEEK LOW - Nifty 500</h4><!-- end ngIf: landingData.stock_action.show_div_wk52_low==true -->
+            <div class="table">
+                <!-- ngRepeat: slow in landingData.stock_action.wk52_low --><div ng-repeat="slow in landingData.stock_action.wk52_low" class="table-row red">
+                    <div class="table-cell-1">
+                        <a data-href="/Stocks?StockId=664903&amp;Exchange=0" onclick="onclick_loader(this.getAttribute(&quot;data-href&quot;))" class="text-color ng-binding">Texmaco Rail</a>
+                        <ul>
+                            <li class="orange-mojo"></li>
+                            <li class="red-mojo"></li>
+                            <li class="green-mojo"></li>
+                        </ul>
+                    </div>
+                    <div class="table-cell-2 text-color ng-binding">71.00</div>
+                    <div class="table-cell-3">
+                        <span class="arrow"></span>
+                    </div>
+                    <div class="table-cell-4 ng-binding">-0.90</div>
+                    <div class="table-cell-5">
+                        <span class="ng-binding">-1.25%</span>
+                    </div>
+                </div><!-- end ngRepeat: slow in landingData.stock_action.wk52_low --><div ng-repeat="slow in landingData.stock_action.wk52_low" class="table-row red">
+                    <div class="table-cell-1">
+                        <a data-href="/Stocks?StockId=448733&amp;Exchange=0" onclick="onclick_loader(this.getAttribute(&quot;data-href&quot;))" class="text-color ng-binding">Eveready Ind.</a>
+                        <ul>
+                            <li class="green-mojo"></li>
+                            <li class="green-mojo"></li>
+                            <li class="red-mojo"></li>
+                        </ul>
+                    </div>
+                    <div class="table-cell-2 text-color ng-binding">251.35</div>
+                    <div class="table-cell-3">
+                        <span class="arrow"></span>
+                    </div>
+                    <div class="table-cell-4 ng-binding">-3.75</div>
+                    <div class="table-cell-5">
+                        <span class="ng-binding">-1.47%</span>
+                    </div>
+                </div><!-- end ngRepeat: slow in landingData.stock_action.wk52_low --><div ng-repeat="slow in landingData.stock_action.wk52_low" class="table-row red">
+                    <div class="table-cell-1">
+                        <a data-href="/Stocks?StockId=447484&amp;Exchange=0" onclick="onclick_loader(this.getAttribute(&quot;data-href&quot;))" class="text-color ng-binding">Balmer Lawrie &amp;</a>
+                        <ul>
+                            <li class="orange-mojo"></li>
+                            <li class="green-mojo"></li>
+                            <li class="orange-mojo"></li>
+                        </ul>
+                    </div>
+                    <div class="table-cell-2 text-color ng-binding">208.15</div>
+                    <div class="table-cell-3">
+                        <span class="arrow"></span>
+                    </div>
+                    <div class="table-cell-4 ng-binding">-3.85</div>
+                    <div class="table-cell-5">
+                        <span class="ng-binding">-1.82%</span>
+                    </div>
+                </div><!-- end ngRepeat: slow in landingData.stock_action.wk52_low --><div ng-repeat="slow in landingData.stock_action.wk52_low" class="table-row red">
+                    <div class="table-cell-1">
+                        <a data-href="/Stocks?StockId=936284&amp;Exchange=0" onclick="onclick_loader(this.getAttribute(&quot;data-href&quot;))" class="text-color ng-binding">VA Tech Wabag</a>
+                        <ul>
+                            <li class="green-mojo"></li>
+                            <li class="green-mojo"></li>
+                            <li class="red-mojo"></li>
+                        </ul>
+                    </div>
+                    <div class="table-cell-2 text-color ng-binding">453.05</div>
+                    <div class="table-cell-3">
+                        <span class="arrow"></span>
+                    </div>
+                    <div class="table-cell-4 ng-binding">-0.95</div>
+                    <div class="table-cell-5">
+                        <span class="ng-binding">-0.21%</span>
+                    </div>
+                </div><!-- end ngRepeat: slow in landingData.stock_action.wk52_low --><div ng-repeat="slow in landingData.stock_action.wk52_low" class="table-row green">
+                    <div class="table-cell-1">
+                        <a data-href="/Stocks?StockId=854942&amp;Exchange=0" onclick="onclick_loader(this.getAttribute(&quot;data-href&quot;))" class="text-color ng-binding">J &amp; K Bank</a>
+                        <ul>
+                            <li class="orange-mojo"></li>
+                            <li class="green-mojo"></li>
+                            <li class="green-mojo"></li>
+                        </ul>
+                    </div>
+                    <div class="table-cell-2 text-color ng-binding">51.80</div>
+                    <div class="table-cell-3">
+                        <span class="arrow"></span>
+                    </div>
+                    <div class="table-cell-4 ng-binding">0.95</div>
+                    <div class="table-cell-5">
+                        <span class="ng-binding">1.87%</span>
+                    </div>
+                </div><!-- end ngRepeat: slow in landingData.stock_action.wk52_low -->
+            </div>
+            <!-- ngIf: landingData.stock_action.wk52_low_text.length > 0 && landingData.stock_action.show_div_wk52_low==true -->
+        </div><!-- end ngIf: landingData.stock_action.show_div_gainers == true || landingData.stock_action.show_div_losers == true || landingData.stock_action.show_div_wk52_high == true || landingData.stock_action.show_div_wk52_low == true  -->
+        
+        <!--**********************TOP SECTORS************************-->    
+        
+        <!-- ngIf: landingData.top_sectors.show_div_advance == true || landingData.top_sectors.show_div_decline == true --><div class="market-view-container ng-scope">
+            <h3>
+                <span><a data-href="/markets#navSectors" href="javascript:void(0);" onclick="onclick_loader(this.getAttribute(&quot;data-href&quot;))">TOP SECTORS</a></span>
+            </h3>
+            <!-- ngIf: landingData.top_sectors.show_div_advance == true --><h4 class="sectors-head green ng-scope">
+                <span class="ng-binding">4</span>
+                ADVANCING SECTORS
+            </h4><!-- end ngIf: landingData.top_sectors.show_div_advance == true -->
+            <div class="table sector-table">
+                <!-- ngRepeat: sgainers in landingData.top_sectors.advance --><div ng-repeat="sgainers in landingData.top_sectors.advance" class="table-row green">
+                    <div class="table-cell-1 text-color ng-binding">
+                        Nifty PSU Banks
+                    </div>
+                    <div class="table-csell-3"><span class="arrow"></span></div>
+                    <div class="table-cell-4">
+                        <span class="ng-binding">2.84%</span>
+                    </div>
+                </div><!-- end ngRepeat: sgainers in landingData.top_sectors.advance --><div ng-repeat="sgainers in landingData.top_sectors.advance" class="table-row green">
+                    <div class="table-cell-1 text-color ng-binding">
+                        BSE Cons Durbl
+                    </div>
+                    <div class="table-csell-3"><span class="arrow"></span></div>
+                    <div class="table-cell-4">
+                        <span class="ng-binding">0.29%</span>
+                    </div>
+                </div><!-- end ngRepeat: sgainers in landingData.top_sectors.advance --><div ng-repeat="sgainers in landingData.top_sectors.advance" class="table-row green">
+                    <div class="table-cell-1 text-color ng-binding">
+                        BSE Cap Goods
+                    </div>
+                    <div class="table-csell-3"><span class="arrow"></span></div>
+                    <div class="table-cell-4">
+                        <span class="ng-binding">0.06%</span>
+                    </div>
+                </div><!-- end ngRepeat: sgainers in landingData.top_sectors.advance -->            
+            </div>
+            <!-- ngIf: landingData.top_sectors.advance_text.length > 0 && landingData.top_sectors.show_div_advance == true -->
+            <!-- ngIf: landingData.top_sectors.show_div_decline == true --><h4 class="sectors-head red ng-scope">
+                <span class="ng-binding">38</span> DECLINING SECTORS
+            </h4><!-- end ngIf: landingData.top_sectors.show_div_decline == true -->
+            <div class="table sector-table">
+                <!-- ngRepeat: slosers in landingData.top_sectors.decline --><div ng-repeat="slosers in landingData.top_sectors.decline" class="table-row red">
+                    <div class="table-cell-1 text-color ng-binding">
+                        BSE Metal
+                    </div>
+                    <div class="table-cell-3"><span class="arrow"></span></div>
+                    <div class="table-cell-4">
+                        <span class="ng-binding">-3.93%</span>
+                    </div>
+                </div><!-- end ngRepeat: slosers in landingData.top_sectors.decline --><div ng-repeat="slosers in landingData.top_sectors.decline" class="table-row red">
+                    <div class="table-cell-1 text-color ng-binding">
+                        Nifty Metal
+                    </div>
+                    <div class="table-cell-3"><span class="arrow"></span></div>
+                    <div class="table-cell-4">
+                        <span class="ng-binding">-3.74%</span>
+                    </div>
+                </div><!-- end ngRepeat: slosers in landingData.top_sectors.decline --><div ng-repeat="slosers in landingData.top_sectors.decline" class="table-row red">
+                    <div class="table-cell-1 text-color ng-binding">
+                        BSE Oil &amp; Gas
+                    </div>
+                    <div class="table-cell-3"><span class="arrow"></span></div>
+                    <div class="table-cell-4">
+                        <span class="ng-binding">-3.45%</span>
+                    </div>
+                </div><!-- end ngRepeat: slosers in landingData.top_sectors.decline -->           
+            </div>
+            <!-- ngIf: landingData.top_sectors.decline_text.length > 0 && landingData.top_sectors.show_div_decline == true -->
+        </div><!-- end ngIf: landingData.top_sectors.show_div_advance == true || landingData.top_sectors.show_div_decline == true -->
+        
+        <!--**********************MOJO STOCKS - DIVERSIFIED************************-->  
+        
+        <div class="market-view-container">
+            <h3>
+                <span><a data-href="/home/mojoportfolio" href="javascript:void(0);" onclick="onclick_loader(this.getAttribute(&quot;data-href&quot;))">MOJO STOCKS - DIVERSIFIED</a></span>
+            </h3>
+            
+                        <div class="table">
+                <!-- ngRepeat: diversified in landingData.div_stocks --><div ng-repeat="diversified in landingData.div_stocks" class="table-row green">
+                    <div class="table-cell-1">
+                        <a data-href="/Stocks?StockId=156274&amp;Exchange=0" onclick="onclick_loader(this.getAttribute(&quot;data-href&quot;))" class="text-color ng-binding">Natco Pharma</a>
+                        <ul>
+                            <li class="green-mojo"></li>
+                            <li class="green-mojo"></li>
+                            <li class="green-mojo"></li>
+                        </ul>
+                    </div>
+                    <div class="table-cell-2 text-color ng-binding">790.10</div>
+                    <div class="table-cell-3">
+                        <span class="arrow"></span>
+                    </div>
+                    <div class="table-cell-4 ng-binding">
+                        32.60
+                    </div>
+                    <div class="table-cell-5">
+                        <span class="ng-binding">4.30%</span>
+                    </div>
+                </div><!-- end ngRepeat: diversified in landingData.div_stocks --><div ng-repeat="diversified in landingData.div_stocks" class="table-row green">
+                    <div class="table-cell-1">
+                        <a data-href="/Stocks?StockId=284541&amp;Exchange=0" onclick="onclick_loader(this.getAttribute(&quot;data-href&quot;))" class="text-color ng-binding">Glaxosmithkline Cons</a>
+                        <ul>
+                            <li class="green-mojo"></li>
+                            <li class="green-mojo"></li>
+                            <li class="green-mojo"></li>
+                        </ul>
+                    </div>
+                    <div class="table-cell-2 text-color ng-binding">6,198.00</div>
+                    <div class="table-cell-3">
+                        <span class="arrow"></span>
+                    </div>
+                    <div class="table-cell-4 ng-binding">
+                        252.70
+                    </div>
+                    <div class="table-cell-5">
+                        <span class="ng-binding">4.25%</span>
+                    </div>
+                </div><!-- end ngRepeat: diversified in landingData.div_stocks --><div ng-repeat="diversified in landingData.div_stocks" class="table-row green">
+                    <div class="table-cell-1">
+                        <a data-href="/Stocks?StockId=215354&amp;Exchange=0" onclick="onclick_loader(this.getAttribute(&quot;data-href&quot;))" class="text-color ng-binding">Ramkrishna Forgings</a>
+                        <ul>
+                            <li class="green-mojo"></li>
+                            <li class="green-mojo"></li>
+                            <li class="green-mojo"></li>
+                        </ul>
+                    </div>
+                    <div class="table-cell-2 text-color ng-binding">733.50</div>
+                    <div class="table-cell-3">
+                        <span class="arrow"></span>
+                    </div>
+                    <div class="table-cell-4 ng-binding">
+                        22.85
+                    </div>
+                    <div class="table-cell-5">
+                        <span class="ng-binding">3.22%</span>
+                    </div>
+                </div><!-- end ngRepeat: diversified in landingData.div_stocks --><div ng-repeat="diversified in landingData.div_stocks" class="table-row green">
+                    <div class="table-cell-1">
+                        <a data-href="/Stocks?StockId=919264&amp;Exchange=0" onclick="onclick_loader(this.getAttribute(&quot;data-href&quot;))" class="text-color ng-binding">Bata India</a>
+                        <ul>
+                            <li class="green-mojo"></li>
+                            <li class="green-mojo"></li>
+                            <li class="orange-mojo"></li>
+                        </ul>
+                    </div>
+                    <div class="table-cell-2 text-color ng-binding">758.80</div>
+                    <div class="table-cell-3">
+                        <span class="arrow"></span>
+                    </div>
+                    <div class="table-cell-4 ng-binding">
+                        5.80
+                    </div>
+                    <div class="table-cell-5">
+                        <span class="ng-binding">0.77%</span>
+                    </div>
+                </div><!-- end ngRepeat: diversified in landingData.div_stocks --><div ng-repeat="diversified in landingData.div_stocks" class="table-row green">
+                    <div class="table-cell-1">
+                        <a data-href="/Stocks?StockId=114940&amp;Exchange=0" onclick="onclick_loader(this.getAttribute(&quot;data-href&quot;))" class="text-color ng-binding">Graphite India</a>
+                        <ul>
+                            <li class="green-mojo"></li>
+                            <li class="green-mojo"></li>
+                            <li class="green-mojo"></li>
+                        </ul>
+                    </div>
+                    <div class="table-cell-2 text-color ng-binding">826.60</div>
+                    <div class="table-cell-3">
+                        <span class="arrow"></span>
+                    </div>
+                    <div class="table-cell-4 ng-binding">
+                        2.70
+                    </div>
+                    <div class="table-cell-5">
+                        <span class="ng-binding">0.33%</span>
+                    </div>
+                </div><!-- end ngRepeat: diversified in landingData.div_stocks --><div ng-repeat="diversified in landingData.div_stocks" class="table-row red">
+                    <div class="table-cell-1">
+                        <a data-href="/Stocks?StockId=664761&amp;Exchange=0" onclick="onclick_loader(this.getAttribute(&quot;data-href&quot;))" class="text-color ng-binding">Sanofi India</a>
+                        <ul>
+                            <li class="green-mojo"></li>
+                            <li class="green-mojo"></li>
+                            <li class="green-mojo"></li>
+                        </ul>
+                    </div>
+                    <div class="table-cell-2 text-color ng-binding">4,932.65</div>
+                    <div class="table-cell-3">
+                        <span class="arrow"></span>
+                    </div>
+                    <div class="table-cell-4 ng-binding">
+                        -1.25
+                    </div>
+                    <div class="table-cell-5">
+                        <span class="ng-binding">-0.03%</span>
+                    </div>
+                </div><!-- end ngRepeat: diversified in landingData.div_stocks --><div ng-repeat="diversified in landingData.div_stocks" class="table-row red">
+                    <div class="table-cell-1">
+                        <a data-href="/Stocks?StockId=343371&amp;Exchange=0" onclick="onclick_loader(this.getAttribute(&quot;data-href&quot;))" class="text-color ng-binding">Mahindra CIE</a>
+                        <ul>
+                            <li class="green-mojo"></li>
+                            <li class="green-mojo"></li>
+                            <li class="green-mojo"></li>
+                        </ul>
+                    </div>
+                    <div class="table-cell-2 text-color ng-binding">235.50</div>
+                    <div class="table-cell-3">
+                        <span class="arrow"></span>
+                    </div>
+                    <div class="table-cell-4 ng-binding">
+                        -2.05
+                    </div>
+                    <div class="table-cell-5">
+                        <span class="ng-binding">-0.86%</span>
+                    </div>
+                </div><!-- end ngRepeat: diversified in landingData.div_stocks --><div ng-repeat="diversified in landingData.div_stocks" class="table-row red">
+                    <div class="table-cell-1">
+                        <a data-href="/Stocks?StockId=104922&amp;Exchange=0" onclick="onclick_loader(this.getAttribute(&quot;data-href&quot;))" class="text-color ng-binding">Bharat Financial Inc</a>
+                        <ul>
+                            <li class="green-mojo"></li>
+                            <li class="green-mojo"></li>
+                            <li class="green-mojo"></li>
+                        </ul>
+                    </div>
+                    <div class="table-cell-2 text-color ng-binding">1,132.65</div>
+                    <div class="table-cell-3">
+                        <span class="arrow"></span>
+                    </div>
+                    <div class="table-cell-4 ng-binding">
+                        -19.80
+                    </div>
+                    <div class="table-cell-5">
+                        <span class="ng-binding">-1.72%</span>
+                    </div>
+                </div><!-- end ngRepeat: diversified in landingData.div_stocks --><div ng-repeat="diversified in landingData.div_stocks" class="table-row red">
+                    <div class="table-cell-1">
+                        <a data-href="/Stocks?StockId=285487&amp;Exchange=0" onclick="onclick_loader(this.getAttribute(&quot;data-href&quot;))" class="text-color ng-binding">Rajoo Engineers</a>
+                        <ul>
+                            <li class="green-mojo"></li>
+                            <li class="green-mojo"></li>
+                            <li class="green-mojo"></li>
+                        </ul>
+                    </div>
+                    <div class="table-cell-2 text-color ng-binding">53.45</div>
+                    <div class="table-cell-3">
+                        <span class="arrow"></span>
+                    </div>
+                    <div class="table-cell-4 ng-binding">
+                        -0.95
+                    </div>
+                    <div class="table-cell-5">
+                        <span class="ng-binding">-1.75%</span>
+                    </div>
+                </div><!-- end ngRepeat: diversified in landingData.div_stocks --><div ng-repeat="diversified in landingData.div_stocks" class="table-row red">
+                    <div class="table-cell-1">
+                        <a data-href="/Stocks?StockId=171892&amp;Exchange=0" onclick="onclick_loader(this.getAttribute(&quot;data-href&quot;))" class="text-color ng-binding">Dabur India</a>
+                        <ul>
+                            <li class="green-mojo"></li>
+                            <li class="green-mojo"></li>
+                            <li class="green-mojo"></li>
+                        </ul>
+                    </div>
+                    <div class="table-cell-2 text-color ng-binding">368.10</div>
+                    <div class="table-cell-3">
+                        <span class="arrow"></span>
+                    </div>
+                    <div class="table-cell-4 ng-binding">
+                        -6.75
+                    </div>
+                    <div class="table-cell-5">
+                        <span class="ng-binding">-1.80%</span>
+                    </div>
+                </div><!-- end ngRepeat: diversified in landingData.div_stocks -->
+            </div>
+                     </div>
+    
+</div>
